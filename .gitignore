@@ -1,0 +1,48 @@
+# Compiled binaries
+hwid_scanner_swift
+hwid_scanner_gui
+*.o
+*.a
+*.dylib
+
+# Generated reports
+hwid_report.json
+*.json
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Xcode
+*.xcodeproj
+*.xcworkspace
+xcuserdata/
+DerivedData/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# Build artifacts
+*.swiftmodule
+*.swiftdoc
+*.swiftsourceinfo
+
+# Temporary files
+*.swp
+*.swo
+*~
+*.tmp
+
+# IDE
+.vscode/
+.idea/
+*.iml
+

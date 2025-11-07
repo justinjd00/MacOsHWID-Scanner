@@ -1,21 +1,21 @@
-# Makefile für HWID Scanner (Swift)
+# Makefile for HWID Scanner (Swift)
 
 .PHONY: all swift gui clean run run-gui help
 
 all: swift gui
 
 swift:
-	@echo "🔨 Kompiliere CLI-Version..."
+	@echo "Compiling CLI version..."
 	swiftc -o hwid_scanner_swift \
 		HWIDScanner.swift \
 		HWIDScannerCLI.swift \
 		-framework IOKit \
 		-framework SystemConfiguration \
 		-framework CryptoKit
-	@echo "✅ CLI-Version kompiliert: ./hwid_scanner_swift"
+	@echo "CLI version compiled: ./hwid_scanner_swift"
 
 gui:
-	@echo "🔨 Kompiliere GUI-Version..."
+	@echo "Compiling GUI version..."
 	swiftc -o hwid_scanner_gui \
 		HWIDScannerGUI.swift \
 		HWIDScanner.swift \
@@ -24,29 +24,28 @@ gui:
 		-framework CryptoKit \
 		-framework AppKit \
 		-framework SwiftUI
-	@echo "✅ GUI-Version kompiliert: ./hwid_scanner_gui"
+	@echo "GUI version compiled: ./hwid_scanner_gui"
 
 run: swift
-	@echo "🚀 Führe CLI-Version aus..."
+	@echo "Running CLI version..."
 	./hwid_scanner_swift
 
 run-gui: gui
-	@echo "🚀 Führe GUI-Version aus..."
+	@echo "Running GUI version..."
 	./hwid_scanner_gui
 
 clean:
-	@echo "🧹 Bereinige..."
+	@echo "Cleaning..."
 	rm -f hwid_scanner_swift
 	rm -f hwid_scanner_gui
 	rm -f hwid_report.json
-	@echo "✅ Bereinigt"
+	@echo "Cleaned"
 
 help:
-	@echo "Verfügbare Ziele:"
-	@echo "  make swift    - Kompiliere CLI-Version"
-	@echo "  make gui      - Kompiliere GUI-Version"
-	@echo "  make run      - Kompiliere und führe CLI-Version aus"
-	@echo "  make run-gui  - Kompiliere und führe GUI-Version aus"
-	@echo "  make clean    - Lösche kompilierte Dateien"
-	@echo "  make all      - Kompiliere beide Versionen"
-
+	@echo "Available targets:"
+	@echo "  make swift    - Compile CLI version"
+	@echo "  make gui      - Compile GUI version"
+	@echo "  make run      - Compile and run CLI version"
+	@echo "  make run-gui  - Compile and run GUI version"
+	@echo "  make clean    - Remove compiled files"
+	@echo "  make all      - Compile both versions"
